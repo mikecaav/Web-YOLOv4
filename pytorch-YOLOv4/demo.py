@@ -10,10 +10,6 @@
     @Detail    : removed detect video and detect skimage
 '''
 
-# import sys
-# import time
-# from PIL import Image, ImageDraw
-# from models.tiny_yolo import TinyYoloNet
 from tool.utils import *
 from tool.torch_utils import *
 from tool.darknet2pytorch import Darknet
@@ -43,7 +39,6 @@ def detect_cv2(cfgfile, weightfile, imgfile):
     class_names = load_class_names(namesfile)
 
     img = cv2.imread(imgfile)
-    print(img, imgfile)
     sized = cv2.resize(img, (m.width, m.height))
     sized = cv2.cvtColor(sized, cv2.COLOR_BGR2RGB)
 
@@ -54,7 +49,7 @@ def detect_cv2(cfgfile, weightfile, imgfile):
         if i == 1:
             print('%s: Predicted in %f seconds.' % (imgfile, (finish - start)))
 
-    plot_boxes_cv2(img, boxes[0], savename='predictions.jpg', class_names=class_names)
+    return plot_boxes_cv2(img, boxes[0], class_names=class_names)    
 
 
 
