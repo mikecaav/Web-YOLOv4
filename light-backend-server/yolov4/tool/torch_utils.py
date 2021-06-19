@@ -10,7 +10,7 @@ import itertools
 import struct  # get_image_size
 import imghdr  # get_image_size
 
-from tool import utils 
+from yolov4.tool import utils 
 
 
 def bbox_ious(boxes1, boxes2, x1y1x2y2=True):
@@ -94,11 +94,6 @@ def do_detect(model, img, conf_thresh, nms_thresh, use_cuda=1):
     output = model(img)
 
     t2 = time.time()
-
-    print('-----------------------------------')
-    print('           Preprocess : %f' % (t1 - t0))
-    print('      Model Inference : %f' % (t2 - t1))
-    print('-----------------------------------')
 
     return utils.post_processing(img, conf_thresh, nms_thresh, output)
 
