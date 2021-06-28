@@ -15,10 +15,7 @@ from yolov4.tool.torch_utils import *
 from yolov4.tool.darknet2pytorch import Darknet
 import cv2
 
-"""hyper parameters"""
-use_cuda = False
-
-def detect_cv2(model, cfgfile, weightfile, img):
+def detect_cv2(model, cfgfile, weightfile, img, use_cuda):
 
     if use_cuda:
         model.cuda()
