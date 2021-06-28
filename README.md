@@ -29,10 +29,10 @@ pip install torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.
 
 #### GPU
 For this installation make sure that you have the corresponding version for
-cuda 9.2. You can check all the available versions and the installation details 
-<a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux">here</a>.
+cuda 10.1. You can check all the available versions and the installation details 
+<a href="https://developer.nvidia.com/cuda-10.1-download-archive-base">here</a>.
 ```
-pip install torch==1.4.0+cu92 torchvision==0.5.0+cu92 -f https://download.pytorch.org/whl/torch_stable.html
+pip3 install torch==1.4.0 torchvision==0.5.0 -f https://download.pytorch.org/whl/cu101/torch_stable.html
 ```
 
 ## Run the project
