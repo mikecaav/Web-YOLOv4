@@ -42,3 +42,6 @@ This will run on the local host on 5000 port.
 $ python app.py
 ```
 
+## Results
+![Results](./media/results.gif)
+
