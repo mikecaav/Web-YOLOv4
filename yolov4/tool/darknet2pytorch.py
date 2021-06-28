@@ -5,7 +5,8 @@ from yolov4.tool.region_loss import RegionLoss
 from yolov4.tool.yolo_layer import YoloLayer
 from yolov4.tool.config import *
 from yolov4.tool.torch_utils import *
-
+import ctypes
+ctypes.cdll.LoadLibrary('caffe2_nvrtc.dll')
 
 class Mish(torch.nn.Module):
     def __init__(self):
